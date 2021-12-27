@@ -40,6 +40,6 @@ public class ExerciseManagementTest {
     public void ifNotMarkedCompletedIsNotCompleted(){
         mgnt.add("new ex");
         mgnt.markAsCompleted("new ex");
-        assertFalse(mgnt.isCompleted("new ex"));
+        assertFalse(mgnt.isCompleted("new"));
     } 
 }

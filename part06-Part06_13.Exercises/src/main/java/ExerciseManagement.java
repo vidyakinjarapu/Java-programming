@@ -13,10 +13,10 @@ public class ExerciseManagement {
         return this.exercises;
     }
     
-//    public ArrayList<String> completedExcercises(){
-//        return this.completedExcercises;
-//    }
-//    
+    public ArrayList<String> completedExcercises(){
+        return this.completedExcercises;
+    }
+    
     public void add(String exercise){
         this.exercises.add(exercise);
     }

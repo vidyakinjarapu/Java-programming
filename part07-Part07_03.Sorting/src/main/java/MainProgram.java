@@ -3,20 +3,21 @@ public class MainProgram {
 
     public static void main(String[] args) {
         // write your test code here
-        int[] array = {-1, 3, 1, 2};
+        int[] array = {1, 3, -1, 2};
         System.out.println("Smallest: " + smallest(array));
         System.out.println("Index: " + indexOfSmallest(array));
-        System.out.println("Smallestfrom" + MainProgram.indexOfSmallestFrom(array, 2));
+        System.out.println("Smallestfrom: " + MainProgram.indexOfSmallestFrom(array, 2));
         
-        int[] numbers = {3, 2, 5, 4, 8};
-
-        System.out.println(Arrays.toString(numbers));
-
-        MainProgram.swap(numbers, 1, 0);
-        System.out.println(Arrays.toString(numbers));
-
-        MainProgram.swap(numbers, 0, 3);
-        System.out.println(Arrays.toString(numbers));
+//        int[] numbers = {3, 2, 5, 4, 8};
+//
+//        System.out.println(Arrays.toString(numbers));
+//
+//        MainProgram.swap(numbers, 1, 0);
+//        System.out.println(Arrays.toString(numbers));
+//
+//        MainProgram.swap(numbers, 0, 3);
+//        System.out.println(Arrays.toString(numbers));
+        sort(array);
     }
     
     public static int smallest(int[] array){
@@ -67,6 +68,15 @@ public class MainProgram {
     }
     
     public static void sort(int[] array){
+        
+        
+        for(int i = 0; i < array.length; i++){
+//            int small = smallest(array);
+            int indexOfSmall = indexOfSmallestFrom(array, i);
+            swap(array, i, indexOfSmall);
+            System.out.println(Arrays.toString(array));
+        }
+        System.out.println(Arrays.toString(array));
         
     }
 }

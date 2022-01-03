@@ -64,35 +64,40 @@ public class UserInterface {
             String cmd = scanner.nextLine();
             
             if(cmd.equals("list")){
-                System.out.println("Recipes: ");
-                this.recipeList.forEach((re) -> {
-                    System.out.println(re.toString());
-                });                
-            } 
+                for(Recipe rec: this.recipeList){
+                    System.out.println(rec.toString());
+                }
+            }
             
             if(cmd.equals("find cooking time")){
                 System.out.print("Max cooking time: ");
                 int cookTime = Integer.valueOf(scanner.nextLine());
-                this.recipeList.stream().filter((re) -> (re.getTime() <= cookTime)).forEachOrdered((re) -> {
-                    System.out.println(re.toString());
-                });
+                for(Recipe rec: this.recipeList){
+                    if(rec.getTime() <= cookTime){
+                        System.out.println(rec.toString());
+                    }
+                }   
             }
             
             if(cmd.equals("find name")){
                 System.out.print("Searched word: ");
                 String search = scanner.nextLine();
                 System.out.println("Recipes: ");
-                this.recipeList.stream().filter((re) -> (re.getRecipe().contains(search))).forEachOrdered((re) -> {
-                    System.out.println(re.toString());
-                });                
+                for(Recipe rec: this.recipeList){
+                    if(rec.getRecipe().contains(search)){
+                        System.out.println(rec.toString());
+                    }
+                }        
             }
             
             if(cmd.equals("find ingredient")){
                 System.out.print("Ingredient: ");
                 String ing = scanner.nextLine();
-                this.recipeList.stream().filter((re) -> (re.searchIngradient(ing))).forEachOrdered((re) -> {
-                    System.out.println(re.toString());
-                });
+                for(Recipe rec: this.recipeList){
+                    if(rec.searchIngradient(ing)){
+                        System.out.println(rec.toString());
+                    }
+                }
             }
             
             if(cmd.equals("stop")){
